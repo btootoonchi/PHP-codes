@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Classes</title>
+	</head>
+	
+	<body>
+		
+		<hr>
+		
+		<?php 
+				
+			class person {
+				
+				public $name = "";
+				
+				function __construct() {
+					echo 'I am alive. <br><br>';
+				}
+				
+				function __destruct() {
+					echo '<br><br>I am not alive.<br>';
+				}
+				
+				public function sayHello() {
+					echo 'Hello my name is  '.$this->name;
+					echo '<br>';
+					echo self::MAXLENGTH;
+				}
+			}
+			
+			$e = new person;
+			$e->name = "Babak";
+			$e->sayHello();
+			
+			$s = serialize($e);
+			file_put_contents("serialcalss.txt", $s);
+			
+			echo 'Saved to disk.<br>';
+			
+			//load it back into ram
+			$u = file_get_contents("serialcalss.txt");
+			$b = unserialize($u);
+			
+			echo $b->name;
+		?>
+	</body>
+</html>

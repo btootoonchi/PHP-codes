@@ -1,0 +1,38 @@
+<?php 
+
+$name = $_FILES['file']['name'];
+$size = $_FILES['file']['size'];
+$type = $_FILES['file']['type'];
+$tmp_name = $_FILES['file']['tmp_name'];
+$error = $_FILES['file']['error'];
+
+$max_size = 2097152;
+$extension = strtolower(substr($name, strpos($name, '.') + 1));
+
+if (isset($name)) {
+	if (!empty($name)) {
+		if ( ($extension == 'jpg' || $extension == 'jpeg') && ($type == 'image/jpeg' || $type == 'image/jpg') ) {
+			$location = 'uploads/';
+			if (move_uploaded_file($tmp_name, $location.$name)) {
+				echo 'Uploaded.';
+			}
+		} else {
+			echo 'File must be jpg/jpeg.';
+		}
+	} else {
+		echo 'Please choose a file.';
+	}
+}
+
+echo $name.'<br>';
+echo $size.'<br>';
+echo $type.'<br>';
+echo $tmp_name.'<br>';
+echo $error.'<br>';
+
+?>
+
+<form action="upload.php" method="POST" enctype="multipart/form-data">
+	<input type="file" name="file"><br><br>
+	<input type="submit" value="Submit">
+</form>

@@ -1,0 +1,14 @@
+<?php 
+
+$to = 'b_tootoonchi@yahoo.com';
+$subject = 'This is an email.';
+$body = 'This is a test email'."\n\n".'hope you got it.';
+$headers = 'From: Babak <babak.tootoonchi@gmail.com>';
+
+if (mail($to, $subject, $body, $headers)) {
+	echo 'Email has been sent to '.$to;
+} else {
+	echo 'There was an error sending the email.';
+}
+
+?>

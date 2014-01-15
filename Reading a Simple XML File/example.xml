@@ -1,0 +1,26 @@
+<producers>
+	<producer>
+		<name>Babak</name>
+		<age>38</age>
+		<show>
+			<showname>A show</showname>
+			<showdate>12th December 2012</showdate>
+		</show>
+	</producer>
+	<producer>
+		<name>Hamed</name>
+		<age>38</age>
+		<show>
+			<showname>TV show</showname>
+			<showdate>13th Feb 2012</showdate>
+		</show>
+	</producer>
+	<producer>
+		<name>Hooman</name>
+		<age>42</age>
+		<show>
+			<showname>Cinema</showname>
+			<showdate>20 Aug 2013</showdate>
+		</show>
+	</producer>
+</producers>

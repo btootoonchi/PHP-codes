@@ -1,0 +1,10 @@
+<?php 
+
+$rand = rand();
+$max = getrandmax();
+echo $rand.'/'.$max;
+?>
+
+<form action="index.php" method="POST">
+	<input type="submit" name="roll" value="Roll"/>
+</form>

@@ -1,0 +1,53 @@
+<?php 
+
+require 'connect.inc.php';
+
+?>
+
+<form action="index.php" method="POST">
+	Name:  
+	<input type="text" name="search_name"/>
+	<br><br>
+	<input type="submit" value="Search"/>
+</form>
+
+<?php
+
+if (isset($_POST['search_name']) && !empty($_POST['search_name'])) {
+	
+	$search_name = $_POST['search_name'];
+	
+	$query = "SELECT name FROM names WHERE name LIKE '%".mysql_real_escape_string($search_name)."%'";
+	
+	if ($query_run = mysql_query($query)) {
+		$query_num_rows = mysql_num_rows($query_run);
+		if ($query_num_rows == NULL) {
+			echo 'No resuls found.';
+		} else { // if (mysql_num_rows($query_run)>=1)
+			while ($query_row = mysql_fetch_assoc($query_run)) {
+				echo '<br>'.$query_num_rows.' Result found:'.'<br>';
+				//$id = $query_row['id'];
+				$name = $query_row['name'];
+				echo ' '.$name.'<br>';
+			}
+		
+			// OR
+		
+			while ($row = 	mysql_fetch_array($query_run)) {
+				//echo $row['id'].' '.$row['name'].'<br>';
+				echo '<br>'.'Fetch Array'.'<br>';
+				extract($row);
+				echo $id.' '.$name.'<br>';
+			}
+		
+		}
+
+	} else {
+		echo 'Query failed. '.mysql_error();
+	}
+
+	mysql_close();
+	 
+}
+?>
+

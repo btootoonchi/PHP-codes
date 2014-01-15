@@ -1,0 +1,29 @@
+<?php 
+	
+	//echo $_GET['text'];
+	//echo $_POST['text'];
+	if (isset($_POST['text'])) {
+		$text = $_POST['text'];
+	}
+	
+	if (!empty($text)) {
+		
+		if (@mysql_connect('localhost', 'root', '')) {
+			if (@mysql_select_db('ajax')) {
+				$query = "INSERT INTO 'data' VALUES ('', '".mysql_real_escape_string($text)."')'";
+				if ($query_run = mysql_query($query)) {
+					echo 'Data inserted.';
+				} else {
+					echo 'Failed.';
+				}
+			
+				while ($query_row = mysql_fetch_assoc($query_run)) {
+					echo $name = $query_row('name').'<br>';
+				}
+			}
+		}
+	} else {
+		echo 'Please type something.';
+	}
+
+?>

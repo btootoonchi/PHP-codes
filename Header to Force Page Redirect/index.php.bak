@@ -1,0 +1,9 @@
+<?php 
+$redirect_page ='https://www.google.ca/';
+$redirect = false;
+
+if ($redirect == true) {
+	header('location: '.$redirect_page);
+}
+
+?>

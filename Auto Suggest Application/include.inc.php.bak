@@ -1,0 +1,16 @@
+<?php 
+	//echo 'Hello';
+	if (isset($_GET['search'])) {
+		$search_text = $_GET['search_text'];
+	}
+?>
+<!--
+<?php 
+
+if (isset($_GET['show'])) {
+	include $_GET['show'];
+}
+?>
+
+<input type="submit" onclick="window.location='index.php?show=include.inc.php'">
+-->

@@ -1,0 +1,13 @@
+<?php 
+
+$directory = 'files';
+
+if ($handle = opendir($directory.'/')) {
+	echo 'looking inside \''.$directory.'\':<br>';
+	
+	while($file = readdir($handle)) {
+		echo $file.'<br>';
+	}
+}
+
+?>

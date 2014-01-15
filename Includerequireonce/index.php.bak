@@ -1,0 +1,10 @@
+<?php 
+
+include_once 'header.inc.php';
+include 'header.inc.php';
+
+$var = 'string';
+
+echo $var;
+echo $var1;
+?>

@@ -1,0 +1,29 @@
+<?php 
+
+$day = "Wed";
+$date = 4;
+$year = 2013;
+
+echo 'The date is '.$day.' '.$date.' '.$year;
+
+$text = 'Hello';
+$text .= ' world!';
+
+echo $text;
+ 
+$number1 = '1';
+$number2 = 1;
+
+if ($number1 === $number2) {
+	echo 'Triple equals. OK.';
+} else {
+	echo 'Triple equals. NOK.';
+}
+
+if ($number1 == $number2) {
+	echo 'Double equals. OK.';
+} else {
+	echo 'Double equals. NOK.';
+}
+
+?>
